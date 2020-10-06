@@ -67,7 +67,7 @@ const SingleJobWrapper = styled.div`
 `;
 
 const ViewSingleJob = () => {
-  const url = "http://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://jr-dev-sim-backend.herokuapp.com";
   const { userData } = useContext(UserContext);
   const { jobId } = useParams();
   const [job, setJob] = useState([]);

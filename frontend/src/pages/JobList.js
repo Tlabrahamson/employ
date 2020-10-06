@@ -47,7 +47,7 @@ const JobListWrapper = styled.div`
 `;
 
 const JobList = () => {
-  const url = "http://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import axios from "axios";
 import FormWrapper from "../styles/FormWrapper";
 
 const Register = () => {
-  const url = "http://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

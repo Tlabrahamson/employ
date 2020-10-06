@@ -3,7 +3,7 @@ import FormWrapper from "../styles/FormWrapper";
 import axios from "axios";
 
 const CreateNewJobListing = () => {
-  const url = "http://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [description, setDescription] = useState("");

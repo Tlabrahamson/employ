@@ -5,7 +5,7 @@ import UserContext from "../context/UserContext";
 import FormWrapper from "../styles/FormWrapper";
 
 const Login = () => {
-  const url = "http://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

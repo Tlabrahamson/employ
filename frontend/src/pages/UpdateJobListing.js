@@ -4,7 +4,7 @@ import FormWrapper from "../styles/FormWrapper";
 import { useParams } from "react-router";
 
 const UpdateJobListing = () => {
-  const url = "http://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://jr-dev-sim-backend.herokuapp.com";
   const { jobId } = useParams();
   const [job, setJob] = useState([]);
   const [jobTitle, setJobTitle] = useState("");
