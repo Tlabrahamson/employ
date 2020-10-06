@@ -21,6 +21,7 @@ import CreateNewJobListing from "./pages/CreateNewJobListing";
 import UpdateJobListing from "./pages/UpdateJobListing";
 
 function App() {
+  const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function App() {
       if (token === null) {
         localStorage.setItem("auth-token", "");
       }
-      const getUser = await axios.get("http://localhost:5000/api/user", {
+      const getUser = await axios.get(`${url}/api/user`, {
         headers: { "auth-token": token }
       });
       setUserData({
