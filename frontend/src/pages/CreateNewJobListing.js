@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FormWrapper from "../styles/FormWrapper";
 import axios from "axios";
-import Error from "../components/Error";
+import ErrorAlert from "../components/ErrorAlert";
 
 const CreateNewJobListing = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
@@ -42,7 +42,7 @@ const CreateNewJobListing = () => {
     <FormWrapper>
       <h2>Create A New Job Listing</h2>
       {error && (
-        <Error message={error} clearError={() => setError(undefined)} />
+        <ErrorAlert message={error} clearError={() => setError(undefined)} />
       )}
       <form method="POST">
         <label htmlFor="job-title">Job Title</label>

@@ -51,6 +51,25 @@ const FormWrapper = styled.div`
     color: inherit;
   }
 
+  .error-alert {
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border: solid 1px #cb4f4f;
+    background: #e89494;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .error-alert button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #cb4f4f;
+    color: #fff;
+  }
+
   @media screen and (max-width: 1200px) {
     display: inline-block;
     width: 100%;

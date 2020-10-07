@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../context/UserContext";
 import FormWrapper from "../styles/FormWrapper";
-import Error from "../components/Error";
+import ErrorAlert from "../components/ErrorAlert";
 
 const Login = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
@@ -33,7 +33,7 @@ const Login = () => {
       window.location = "/";
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
-      console.log(err);
+      console.log(error);
     }
   };
 
@@ -41,7 +41,7 @@ const Login = () => {
     <FormWrapper>
       <h2>Login</h2>
       {error && (
-        <Error message={error} clearError={() => setError(undefined)} />
+        <ErrorAlert message={error} clearError={() => setError(undefined)} />
       )}
       <form>
         <label htmlFor="email">Email</label>

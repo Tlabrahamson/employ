@@ -1,12 +1,12 @@
 import React from "react";
 
-const ErrorNotice = props => {
+const ErrorAlert = props => {
   return (
-    <div className="error-notice">
+    <div className="error-alert">
       <span>{props.message}</span>
       <button onClick={props.clearError}>X</button>
     </div>
   );
 };
 
-export default ErrorNotice;
+export default ErrorAlert;
