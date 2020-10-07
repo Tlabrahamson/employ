@@ -9,7 +9,7 @@ const Login = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
 
   const { setUserData } = useContext(UserContext);
 
