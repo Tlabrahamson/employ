@@ -4,13 +4,17 @@ import styled from "styled-components";
 const FooterWrap = styled.footer`
   padding: 1rem 8rem;
   color: #fff;
-  position: absolute;
-  bottom: 0;
   background: #3f3c3f;
   width: 100%;
+  margin-top: 4rem;
 
   @media screen and (max-width: 800px) {
-    padding: 2rem;
+    padding: 1rem;
+    text-align: center;
+
+    h3 {
+      font-size: 16px;
+    }
   }
 `;
 

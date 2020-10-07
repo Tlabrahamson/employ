@@ -17,6 +17,16 @@ const HeroWrapper = styled.div`
   hr {
     margin: 4rem 0;
   }
+
+  @media screen and (max-width: 800px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const Hero = () => {

@@ -45,6 +45,14 @@ const HeaderWrap = styled.header`
 
   @media screen and (max-width: 800px) {
     padding: 2rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      font-size: 16px;
+    }
   }
 `;
 

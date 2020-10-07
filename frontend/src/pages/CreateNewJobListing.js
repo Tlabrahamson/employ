@@ -27,6 +27,18 @@ const CreateNewJobListing = () => {
         contactEmail
       };
 
+      if (
+        jobTitle === "" ||
+        company === "" ||
+        description === "" ||
+        location === "" ||
+        salary === "" ||
+        contactName === "" ||
+        contactEmail === ""
+      ) {
+        setError("You must fill out every field");
+      }
+
       await axios
         .post(`${url}/api/job/create`, newJob)
         .then(res => console.log(res.data));
