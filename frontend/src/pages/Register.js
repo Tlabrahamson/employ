@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import FormWrapper from "../styles/FormWrapper";
+import ErrorAlert from "../components/ErrorAlert";
 
 const Register = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
@@ -9,6 +10,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const Register = () => {
           password
         };
 
-        axios
+        await axios
           .post(`${url}/api/user/register`, newUser)
           .then(console.log(newUser));
 
@@ -29,13 +31,16 @@ const Register = () => {
         alert("Uh oh. Your passwords don't match.");
       }
     } catch (err) {
-      console.log(err);
+      err.response.data.msg && setError(err.response.data.msg);
     }
   };
 
   return (
     <FormWrapper>
       <h2>Register</h2>
+      {error && (
+        <ErrorAlert message={error} clearError={() => setError(undefined)} />
+      )}
       <form>
         <label htmlFor="name">Display Name</label>
         <input

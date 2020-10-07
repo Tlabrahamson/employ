@@ -54,9 +54,9 @@ const FormWrapper = styled.div`
   .error-alert {
     padding: 0.5rem;
     border-radius: 8px;
-    margin: 1rem 0;
-    border: solid 1px #cb4f4f;
-    background: #e89494;
+    height: 2rem;
+    margin-top: 2rem;
+    background: #e75149;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,9 +65,13 @@ const FormWrapper = styled.div`
   .error-alert button {
     width: 20px;
     height: 20px;
+    font-size: 12px;
     border-radius: 50%;
     background: #cb4f4f;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @media screen and (max-width: 1200px) {
