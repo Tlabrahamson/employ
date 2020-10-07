@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import UserContext from "../context/UserContext";
 import FormWrapper from "../styles/FormWrapper";
+import Error from "../components/Error";
 
 const Login = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState();
 
   const { setUserData } = useContext(UserContext);
 
@@ -27,10 +29,10 @@ const Login = () => {
         token: loginResponse.data.token,
         user: loginResponse.data.user
       });
-      console.log(loginResponse.data.token);
       localStorage.setItem("auth-token", loginResponse.data.token);
       window.location = "/";
     } catch (err) {
+      err.response.data.msg && setError(err.response.data.msg);
       console.log(err);
     }
   };
@@ -38,6 +40,9 @@ const Login = () => {
   return (
     <FormWrapper>
       <h2>Login</h2>
+      {error && (
+        <Error message={error} clearError={() => setError(undefined)} />
+      )}
       <form>
         <label htmlFor="email">Email</label>
         <input

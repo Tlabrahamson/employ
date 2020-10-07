@@ -29,33 +29,37 @@ router.post("/register", async (req, res) => {
     const savedUser = await user.save();
     res.send({ user: user._id });
   } catch (err) {
-    res.status(400).send(err);
+    res.status(500).json({ error: err.message });
   }
 });
 
 // Login route
 router.post("/login", async (req, res) => {
   // Validate the data before creating a user
-  const { error } = loginValidation(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  try {
+    const { error } = loginValidation(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
 
-  // Check if the email exists
-  const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send("Email doesn't exist");
+    // Check if the email exists
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) return res.status(400).send("Email doesn't exist");
 
-  // Check is password is correct
-  const validPass = await bcrypt.compare(req.body.password, user.password);
-  if (!validPass) return res.status(400).send("Invalid password");
+    // Check is password is correct
+    const validPass = await bcrypt.compare(req.body.password, user.password);
+    if (!validPass) return res.status(400).send("Invalid password");
 
-  // Create and assign a jwt
-  const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-  res.json({
-    token,
-    user: {
-      id: user._id,
-      name: user.name
-    }
-  });
+    // Create and assign a jwt
+    const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        name: user.name
+      }
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Get a single User

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormWrapper from "../styles/FormWrapper";
 import axios from "axios";
+import Error from "../components/Error";
 
 const CreateNewJobListing = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
@@ -11,6 +12,7 @@ const CreateNewJobListing = () => {
   const [salary, setSalary] = useState("");
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -25,21 +27,23 @@ const CreateNewJobListing = () => {
         contactEmail
       };
 
-      axios
+      await axios
         .post(`${url}/api/job/create`, newJob)
         .then(res => console.log(res.data));
 
       alert("Job Created!");
       window.location = "/";
     } catch (err) {
-      console.log(err);
-      alert(err);
+      err.response.data.msg && setError(err.response.data.msg);
     }
   };
 
   return (
     <FormWrapper>
       <h2>Create A New Job Listing</h2>
+      {error && (
+        <Error message={error} clearError={() => setError(undefined)} />
+      )}
       <form method="POST">
         <label htmlFor="job-title">Job Title</label>
         <input

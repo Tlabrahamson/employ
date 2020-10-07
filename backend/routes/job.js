@@ -10,21 +10,21 @@ router.get("/", async (req, res) => {
 
 // Create a new job listing
 router.post("/create", async (req, res) => {
-  // Create a new job
-  const job = new Job({
-    jobTitle: req.body.jobTitle,
-    company: req.body.company,
-    description: req.body.description,
-    location: req.body.location,
-    salary: req.body.salary,
-    contactName: req.body.contactName,
-    contactEmail: req.body.contactEmail
-  });
   try {
+    // Create a new job
+    const job = new Job({
+      jobTitle: req.body.jobTitle,
+      company: req.body.company,
+      description: req.body.description,
+      location: req.body.location,
+      salary: req.body.salary,
+      contactName: req.body.contactName,
+      contactEmail: req.body.contactEmail
+    });
     const savedJob = await job.save();
     res.send({ savedJob });
   } catch (err) {
-    res.status(400).send(err);
+    res.status(500).json({ error: err.message });
   }
 });
 
@@ -44,8 +44,10 @@ router.delete("/jobs/:id", async (req, res) => {
 
 // Update a current job listing
 router.post("/update/:id", async (req, res) => {
-  await Job.findByIdAndUpdate(req.params.id, { useFindAndModify: false }).then(
-    job => {
+  try {
+    await Job.findByIdAndUpdate(req.params.id, {
+      useFindAndModify: false
+    }).then(job => {
       (job.jobTitle = req.body.jobTitle),
         (job.company = req.body.company),
         (job.description = req.body.description),
@@ -58,8 +60,10 @@ router.post("/update/:id", async (req, res) => {
         .save()
         .then(() => res.json("Job updated!"))
         .catch(err => res.status(400).json("Error" + err));
-    }
-  );
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;
