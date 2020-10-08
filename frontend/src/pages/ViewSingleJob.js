@@ -3,74 +3,16 @@ import UserContext from "../context/UserContext";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import styled from "styled-components";
-
-const SingleJobWrapper = styled.div`
-  background: #282d33;
-  padding: 2rem;
-  border-radius: 10px;
-  color: #fff;
-
-  h3 {
-    font-size: 1.75rem;
-  }
-
-  h4 {
-    font-weight: 400;
-    font-size: 1.25rem;
-  }
-
-  h5 {
-    font-size: 1rem;
-  }
-
-  p {
-    font-size: 18px;
-    padding-bottom: 1rem;
-  }
-
-  div {
-    width: 25%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2rem;
-  }
-
-  button {
-    margin: 2rem 0;
-    width: 100px;
-    cursor: pointer;
-    border-radius: 10px;
-    padding: 0.3rem 0;
-    font-size: 1rem;
-    // background: #e74990;
-    color: #fff;
-    border: none;
-  }
-
-  hr {
-    margin: 1rem 0rem;
-  }
-
-  .edit-button {
-    background: #40ca8c;
-  }
-
-  .delete-button {
-    background: #e75149;
-  }
-
-  .apply-button {
-    background: #e74990;
-    width: 200px;
-  }
-`;
+import SingleJobWrapper from "../styles/SingleJobWrapper";
+import emailjs from "emailjs-com";
 
 const ViewSingleJob = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
   const { userData } = useContext(UserContext);
   const { jobId } = useParams();
   const [job, setJob] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     axios
@@ -88,6 +30,38 @@ const ViewSingleJob = () => {
     console.log(jobId);
     alert("Job Deleted!");
     window.location = "/";
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const templateParams = {
+      name: name,
+      email: email,
+      company: job.company,
+      jobTitle: job.jobTitle,
+      contactName: job.contactName,
+      contactEmail: job.contactEmail
+    };
+
+    emailjs
+      .send(
+        "service_cxx9kuq",
+        "template_hltaytr",
+        templateParams,
+        "user_gi0JYUuvI9RmaYkD5X8zW"
+      )
+      .then(
+        response => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        error => {
+          console.log("FAILED...", error);
+        }
+      );
+
+    setName("");
+    setEmail("");
   };
 
   if (userData.user) {
@@ -126,7 +100,27 @@ const ViewSingleJob = () => {
       <h5>
         Contact Information: {job.contactName} - {job.contactEmail}
       </h5>
-      <button className="apply-button">Apply for this position</button>
+      <form>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          onChange={e => setName(e.target.value)}
+          value={name}
+        />
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={e => setEmail(e.target.value)}
+          value={email}
+        />
+        <button className="apply-button" onClick={handleSubmit}>
+          Apply for this position
+        </button>
+      </form>
     </SingleJobWrapper>
   );
 };
