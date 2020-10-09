@@ -38,29 +38,17 @@ const UpdateJobListing = () => {
 
       if (updatedJob.jobTitle === "") {
         updatedJob.jobTitle = job.jobTitle;
-      }
-
-      if (updatedJob.company === "") {
+      } else if (updatedJob.company === "") {
         updatedJob.company = job.company;
-      }
-
-      if (updatedJob.description === "") {
+      } else if (updatedJob.description === "") {
         updatedJob.description = job.description;
-      }
-
-      if (updatedJob.location === "") {
+      } else if (updatedJob.location === "") {
         updatedJob.location = job.location;
-      }
-
-      if (updatedJob.salary === "") {
+      } else if (updatedJob.salary === "") {
         updatedJob.salary = job.salary;
-      }
-
-      if (updatedJob.contactName === "") {
+      } else if (updatedJob.contactName === "") {
         updatedJob.contactName = job.contactName;
-      }
-
-      if (updatedJob.contactEmail === "") {
+      } else if (updatedJob.contactEmail === "") {
         updatedJob.contactEmail = job.contactEmail;
       }
 
