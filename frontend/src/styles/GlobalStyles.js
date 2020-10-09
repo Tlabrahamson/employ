@@ -20,6 +20,7 @@ main {
     margin: 0 auto;
     padding-bottom: 8rem;
     display: block;
+    min-height: 80vh;
 }
 
 button {
@@ -47,6 +48,7 @@ p {
     main {
         width: 100%;
         padding: 0 2rem;
+        min-height: 100%;
     }
 }
 `;
