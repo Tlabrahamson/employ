@@ -36,13 +36,6 @@ const HeaderWrap = styled.header`
     justify-content: center;
   }
 
-  nav button {
-    background: transparent;
-    font-size: 18px;
-    border: none;
-    color: #fff;
-  }
-
   @media screen and (max-width: 800px) {
     padding: 2rem;
 
@@ -79,9 +72,9 @@ export default function Nav() {
             <Link to="/create">
               <li>List a Job</li>
             </Link>
-            <button onClick={handleLogout}>
+            <Link onClick={handleLogout}>
               <li>Log Out</li>
-            </button>
+            </Link>
           </ul>
         </nav>
       </HeaderWrap>
