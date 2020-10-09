@@ -8,4 +8,4 @@ MongoDB Atlas for the database. Express and Node handle the API routes. Mongoose
 
 Jr Dev Sim allows for CRUD operations. You can only see and apply for jobs if you aren't logged in. If you ARE logged in, you can create a job listing, update an existing job listing, and delete a job listing.
 
-![jr-dev-sim](./frontend/assets/jr-dev-sim.jpg)
+![jr-dev-sim](./frontend/src/assets/jr-dev-sim.jpg)
