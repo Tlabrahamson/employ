@@ -46,7 +46,7 @@ const ViewSingleJob = () => {
 
     emailjs
       .send(
-        "service_cxx9kuq",
+        "service_ncuep1z",
         "template_hltaytr",
         templateParams,
         "user_gi0JYUuvI9RmaYkD5X8zW"
