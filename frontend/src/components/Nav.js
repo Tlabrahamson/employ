@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import UserContext from "../context/UserContext";
+import Logo from "../assets/logo.png";
 
 const HeaderWrap = styled.header`
   display: flex;
@@ -11,6 +12,25 @@ const HeaderWrap = styled.header`
   background: #232023;
   color: #fff;
   margin-bottom: 4rem;
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 40px;
+      padding-right: 0.5rem;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div p {
+    padding-bottom: 0.5rem;
+  }
 
   nav {
     display: flex;
@@ -63,26 +83,30 @@ export default function Nav() {
   if (userData.user) {
     return (
       <HeaderWrap>
-        <Link to="/">
+        <Link className="logo-link" to="/">
+          <img src={Logo} alt="logo" />
           <h1>Jr Dev Sim</h1>
         </Link>
-        <p>Hello, {userData.user.name}</p>
-        <nav>
-          <ul>
-            <Link to="/create">
-              <li>List a Job</li>
-            </Link>
-            <Link onClick={handleLogout}>
-              <li>Log Out</li>
-            </Link>
-          </ul>
-        </nav>
+        <div>
+          <p>Hello, {userData.user.name}</p>
+          <nav>
+            <ul>
+              <Link to="/create">
+                <li>List a Job</li>
+              </Link>
+              <Link onClick={handleLogout}>
+                <li>Log Out</li>
+              </Link>
+            </ul>
+          </nav>
+        </div>
       </HeaderWrap>
     );
   }
   return (
     <HeaderWrap>
-      <Link to="/">
+      <Link className="logo-link" to="/">
+        <img src={Logo} alt="logo" />
         <h1>Jr Dev Sim</h1>
       </Link>
       <nav>

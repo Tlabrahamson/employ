@@ -41,7 +41,6 @@ a {
 
 p {
     white-space: pre-line;
-
 }
 
 @media screen and (max-width: 1200px) {
