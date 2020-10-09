@@ -4,7 +4,7 @@ import styled from "styled-components";
 const FooterWrap = styled.footer`
   padding: 1rem 8rem;
   color: #fff;
-  background: #3f3c3f;
+  background: #2a2438;
   width: 100%;
   margin-top: 4rem;
 

@@ -7,7 +7,7 @@ import styled from "styled-components";
 import Hero from "../components/Hero";
 
 const JobListWrapper = styled.div`
-  background: #3d4349;
+  background: #5c5470;
   padding: 2rem;
   border-radius: 10px;
   display: grid;
@@ -29,7 +29,7 @@ const JobListWrapper = styled.div`
   article {
     padding: 1rem;
     border-radius: 10px;
-    background: #2e343b;
+    background: #352f44;
     color: #fff;
   }
 

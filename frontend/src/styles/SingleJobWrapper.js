@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SingleJobWrapper = styled.div`
-  background: #282d33;
+  background: #2a2438;
   padding: 2rem;
   border-radius: 10px;
   color: #fff;
@@ -55,7 +55,7 @@ const SingleJobWrapper = styled.div`
   }
 
   .apply-button {
-    background: #e74990;
+    background: #b232aa;
     width: 200px;
   }
 
@@ -64,7 +64,7 @@ const SingleJobWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
-    background: #3d4349;
+    background: #5c5470;
     color: #fff;
     border-radius: 10px;
     width: 50%;

@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    background: #2e343b;
+    background: #352f44;
     font-family: 'Roboto', sans-serif;
     position: relative;
     min-height: 100vh;
@@ -42,6 +42,10 @@ a {
 
 p {
     white-space: pre-line;
+}
+
+hr {
+    color: #fff;
 }
 
 @media screen and (max-width: 1200px) {

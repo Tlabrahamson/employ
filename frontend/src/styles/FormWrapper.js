@@ -4,14 +4,14 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #3d4349;
+  background: #5c5470;
   padding: 2rem;
   color: #fff;
   border-radius: 10px;
 
   form {
     display: grid;
-    background: #2e343b;
+    background: #352f44;
     padding: 0 1rem;
     border-radius: 10px;
     margin: 2rem 0;
@@ -42,7 +42,7 @@ const FormWrapper = styled.div`
     border-radius: 10px;
     padding: 0.3rem 0;
     font-size: 1rem;
-    background: #e74990;
+    background: #b232aa;
     color: #fff;
     border: none;
   }
