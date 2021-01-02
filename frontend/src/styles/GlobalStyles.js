@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    background: #352f44;
+    background: #fefefe;
     font-family: 'Roboto', sans-serif;
     position: relative;
     min-height: 100vh;
@@ -45,14 +45,14 @@ p {
 }
 
 hr {
-    color: #fff;
+    color: #2d2d2d;
 }
 
 .progress {
     position: absolute;
     top: 50%;
     left: 47%;
-    color: #fff !important;
+    color: #2d2d2d !important;
 }
 
 @media screen and (max-width: 1200px) {

@@ -8,7 +8,6 @@ import { CircularProgress } from "@material-ui/core";
 import Hero from "../components/Hero";
 
 const JobListWrapper = styled.div`
-  background: #5c5470;
   padding: 2rem;
   border-radius: 10px;
   display: grid;
@@ -30,8 +29,7 @@ const JobListWrapper = styled.div`
   article {
     padding: 1rem;
     border-radius: 10px;
-    background: #352f44;
-    color: #fff;
+    box-shadow: 2px 4px 8px #dfdfdf;
   }
 
   article a {
@@ -67,7 +65,7 @@ const JobList = () => {
     .slice(0)
     .reverse()
     .map(job => {
-      let month = new Date(job.date).getMonth();
+      let month = new Date(job.date).getMonth() + 1;
       let day = new Date(job.date).getDate();
       let year = new Date(job.date).getFullYear();
       let jobDate = `${month}/${day}/${year}`;

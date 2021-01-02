@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const HeroWrapper = styled.div`
   text-align: center;
-  color: #fff;
 
   h2 {
     font-size: 2.5rem;

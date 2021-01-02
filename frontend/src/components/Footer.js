@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const FooterWrap = styled.footer`
   padding: 1rem 8rem;
-  color: #fff;
-  background: #2a2438;
+  color: #2d2d2d;
+  background: #fefefe;
   width: 100%;
   margin-top: 4rem;
 
@@ -23,7 +23,7 @@ export default function Footer() {
   const year = date.getFullYear();
   return (
     <FooterWrap>
-      <h3>&copy; {year} Tim Abrahamson</h3>
+      <p>&copy; {year} Tim Abrahamson</p>
     </FooterWrap>
   );
 }

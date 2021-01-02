@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 const SingleJobWrapper = styled.div`
-  background: #2a2438;
+  border: solid 3px #2d2d2d;
   padding: 2rem;
   border-radius: 10px;
-  color: #fff;
 
   h3 {
     font-size: 1.75rem;
@@ -55,17 +54,17 @@ const SingleJobWrapper = styled.div`
   }
 
   .apply-button {
-    background: #b232aa;
+    background: #2d2d2d;
     width: 200px;
   }
 
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    padding: 0 2rem;
     margin-top: 2rem;
-    background: #5c5470;
-    color: #fff;
+    border: solid 3px #2d2d2d;
     border-radius: 10px;
     width: 50%;
 

@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import SingleJobWrapper from "../styles/SingleJobWrapper";
+import { CircularProgress } from "@material-ui/core";
 import emailjs from "emailjs-com";
 
 const ViewSingleJob = () => {
@@ -13,11 +14,15 @@ const ViewSingleJob = () => {
   const [job, setJob] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`${url}/api/job`)
-      .then(res => setJob(res.data.find(job => job._id === jobId)))
+      .then(res => {
+        setLoading(false);
+        setJob(res.data.find(job => job._id === jobId));
+      })
       .catch(err => console.log(err));
   }, [jobId]);
 
@@ -65,7 +70,9 @@ const ViewSingleJob = () => {
   };
 
   if (userData.user) {
-    return (
+    return loading === true ? (
+      <CircularProgress className="progress" />
+    ) : (
       <SingleJobWrapper>
         <h3>
           {job.jobTitle} - {job.company}
@@ -88,7 +95,9 @@ const ViewSingleJob = () => {
       </SingleJobWrapper>
     );
   }
-  return (
+  return loading === true ? (
+    <CircularProgress className="progress" />
+  ) : (
     <SingleJobWrapper>
       <h3>
         {job.jobTitle} - {job.company}
