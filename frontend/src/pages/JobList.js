@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
+import { CircularProgress } from "@material-ui/core";
 
 // Components
 import Hero from "../components/Hero";
@@ -49,11 +50,13 @@ const JobListWrapper = styled.div`
 const JobList = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get(`${url}/api/job/`)
       .then(res => {
+        setLoading(false);
         setJobs(res.data);
       })
       .catch(err => {
@@ -84,7 +87,11 @@ const JobList = () => {
   return (
     <>
       <Hero />
-      <JobListWrapper>{listJobs}</JobListWrapper>
+      {loading === true ? (
+        <CircularProgress className="progress" />
+      ) : (
+        <JobListWrapper>{listJobs}</JobListWrapper>
+      )}
     </>
   );
 };

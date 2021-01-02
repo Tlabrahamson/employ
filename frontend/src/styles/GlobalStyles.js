@@ -48,6 +48,13 @@ hr {
     color: #fff;
 }
 
+.progress {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    color: #fff !important;
+}
+
 @media screen and (max-width: 1200px) {
     main {
         width: 100%;
