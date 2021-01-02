@@ -1,5 +1,7 @@
 # jr-dev-sim
 
+I've decided to redesign this project. It is a work in progress.
+
 Live site -> https://jr-dev-sim.netlify.app/
 
 Built with:
