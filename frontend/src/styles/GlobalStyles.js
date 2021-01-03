@@ -7,12 +7,15 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background: #fefefe;
     font-family: 'Roboto', sans-serif;
     position: relative;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 h1 {
@@ -26,10 +29,9 @@ h2 {
 }
 
 main {
-    padding: 0 8rem;
+    padding: 2rem 8rem;
     width: 1200px;
     margin: 0 auto;
-    padding-bottom: 8rem;
     display: block;
     min-height: 80vh;
     overflow: hidden;
@@ -67,14 +69,10 @@ hr {
     color: #2d2d2d !important;
 }
 
-.hero-overflow-container {
-    overflow: hidden;
-}
-
 @media screen and (max-width: 1200px) {
     main {
         width: 100%;
-        padding: 0 2rem;
+        padding: 2rem 2rem;
         min-height: 100%;
     }
 }

@@ -73,9 +73,7 @@ const JobList = () => {
 
   return (
     <>
-      <div className="hero-overflow-container">
-        <Hero />
-      </div>
+      <Hero />
       {loading === true ? (
         <CircularProgress className="progress" />
       ) : (
