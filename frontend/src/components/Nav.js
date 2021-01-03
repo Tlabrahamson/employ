@@ -10,6 +10,7 @@ const HeaderWrap = styled.header`
   padding: 1rem 8rem 0 8rem;
   background: transparent;
   margin-bottom: 1rem;
+  z-index: 1;
 
   .logo-link {
     display: flex;
