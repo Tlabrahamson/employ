@@ -51,7 +51,7 @@ const HeaderWrap = styled.header`
   nav a {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
 
     &:last-child {
       background: #ee4853;
