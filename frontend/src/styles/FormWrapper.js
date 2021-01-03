@@ -4,7 +4,7 @@ const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 3px #2d2d2d;
+  box-shadow: 2px 4px 8px #dfdfdf;
   padding: 2rem;
   border-radius: 10px;
 
