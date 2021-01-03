@@ -69,21 +69,21 @@ const ViewSingleJob = () => {
     setEmail("");
   };
 
-  if (userData.user) {
-    return loading === true ? (
-      <CircularProgress className="progress" />
-    ) : (
-      <SingleJobWrapper>
-        <h3>
-          {job.jobTitle} - {job.company}
-        </h3>
-        <h4>{job.location}</h4>
-        <h4>{job.salary}</h4>
-        <hr />
-        <p>{job.description}</p>
-        <h5>
-          Contact Information: {job.contactName} - {job.contactEmail}
-        </h5>
+  return loading === true ? (
+    <CircularProgress className="progress" />
+  ) : (
+    <SingleJobWrapper>
+      <h2>
+        {job.jobTitle} - {job.company}
+      </h2>
+      <p>{job.location}</p>
+      <p>{job.salary}</p>
+      <hr />
+      <p>{job.description}</p>
+      <p>
+        Contact Information: {job.contactName} - {job.contactEmail}
+      </p>
+      {userData.user ? (
         <div>
           <Link to={`/update/${job._id}`}>
             <button className="edit-button">Edit</button>
@@ -92,44 +92,29 @@ const ViewSingleJob = () => {
             Delete
           </button>
         </div>
-      </SingleJobWrapper>
-    );
-  }
-  return loading === true ? (
-    <CircularProgress className="progress" />
-  ) : (
-    <SingleJobWrapper>
-      <h3>
-        {job.jobTitle} - {job.company}
-      </h3>
-      <h4>{job.location}</h4>
-      <h4>{job.salary}</h4>
-      <hr />
-      <p>{job.description}</p>
-      <h5>
-        Contact Information: {job.contactName} - {job.contactEmail}
-      </h5>
-      <form>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          onChange={e => setName(e.target.value)}
-          value={name}
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={e => setEmail(e.target.value)}
-          value={email}
-        />
-        <button className="apply-button" onClick={handleSubmit}>
-          Apply for this position
-        </button>
-      </form>
+      ) : (
+        <form>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            onChange={e => setName(e.target.value)}
+            value={name}
+          />
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+          <button className="apply-button" onClick={handleSubmit}>
+            Apply for this position
+          </button>
+        </form>
+      )}
     </SingleJobWrapper>
   );
 };

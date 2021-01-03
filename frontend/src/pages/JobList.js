@@ -27,10 +27,8 @@ const JobListWrapper = styled.div`
     text-decoration: none;
   }
 
-  @media screen and (max-width: 1200px) {
-    h2 {
-      padding: 4rem 2rem;
-    }
+  span {
+    font-weight: 700;
   }
 `;
 
@@ -62,9 +60,11 @@ const JobList = () => {
       return (
         <article key={job._id}>
           <Link to={`/jobs/${job._id}`}>
-            <h3>{job.jobTitle}</h3>
+            <h2>{job.jobTitle}</h2>
           </Link>
-          <h4>{job.company}</h4>
+          <p>
+            <span>{job.company}</span>
+          </p>
           <p>{job.location}</p>
           <p>Posted: {jobDate}</p>
         </article>

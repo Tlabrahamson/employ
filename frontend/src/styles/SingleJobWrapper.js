@@ -5,24 +5,6 @@ const SingleJobWrapper = styled.div`
   padding: 2rem;
   border-radius: 10px;
 
-  h3 {
-    font-size: 1.75rem;
-  }
-
-  h4 {
-    font-weight: 400;
-    font-size: 1.25rem;
-  }
-
-  h5 {
-    font-size: 1rem;
-  }
-
-  p {
-    font-size: 18px;
-    padding-bottom: 1rem;
-  }
-
   div {
     width: 25%;
     display: grid;
@@ -70,14 +52,12 @@ const SingleJobWrapper = styled.div`
 
     input {
       width: 200px;
-      font-size: 1rem;
       padding: 0.3rem 0;
     }
 
     label {
       margin-top: 2rem;
       margin-bottom: 0.4rem;
-      font-size: 18px;
       width: 200px;
     }
   }
