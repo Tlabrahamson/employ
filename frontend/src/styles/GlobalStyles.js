@@ -13,7 +13,7 @@ html {
 
 body {
     background: #fefefe;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
@@ -22,11 +22,13 @@ body {
 h1 {
     font-size: 64px;
     font-weight: 700;
+    line-height: 70px;
 }
 
 h2 {
     font-size: 32px;
     font-weight: 500;
+    line-height: 56px;
 }
 
 main {
@@ -81,10 +83,12 @@ hr {
 @media screen and (max-width: 800px) {
     h1 {
         font-size: 32px;
+        line-height: 56px;
     }
 
     h2 {
         font-size: 24px;
+        line-height: 36px
     }
 }
 `;
