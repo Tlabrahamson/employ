@@ -62,10 +62,10 @@ const JobList = () => {
     .slice(0)
     .reverse()
     .map(job => {
-      let month = new Date(job.date).getMonth() + 1;
-      let day = new Date(job.date).getDate();
-      let year = new Date(job.date).getFullYear();
-      let jobDate = `${month}/${day}/${year}`;
+      let postedDate = new Date(job.date);
+      let currentDate = new Date();
+      let difference = currentDate.getTime() - postedDate.getTime();
+      let differenceInDays = Math.floor(difference / (1000 * 3600 * 24));
 
       return (
         <Link to={`/jobs/${job._id}`}>
@@ -75,7 +75,10 @@ const JobList = () => {
               <span>{job.company}</span>
             </p>
             <p>{job.location}</p>
-            <p>Posted: {jobDate}</p>
+            <p>
+              Posted {differenceInDays}{" "}
+              {differenceInDays <= 1 ? "day ago" : "days ago"}
+            </p>
           </article>
         </Link>
       );
