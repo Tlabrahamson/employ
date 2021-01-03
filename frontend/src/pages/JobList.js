@@ -8,22 +8,12 @@ import { CircularProgress } from "@material-ui/core";
 import Hero from "../components/Hero";
 
 const JobListWrapper = styled.div`
-  padding: 2rem;
   border-radius: 10px;
   display: grid;
   grid-row-gap: 2rem;
 
-  h3 {
-    font-size: 1.75rem;
-  }
-
   h4 {
     font-weight: 400;
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 18px;
   }
 
   article {
@@ -39,7 +29,6 @@ const JobListWrapper = styled.div`
 
   @media screen and (max-width: 1200px) {
     h2 {
-      font-size: 2rem;
       padding: 4rem 2rem;
     }
   }

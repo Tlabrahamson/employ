@@ -1,39 +1,48 @@
 import React from "react";
 import styled from "styled-components";
+import heroImage from "../assets/hero.png";
 
 const HeroWrapper = styled.div`
-  text-align: center;
+  height: 290px;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  h2 {
-    font-size: 2.5rem;
-    padding-bottom: 0.5rem;
+  img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  h1 {
+    padding-bottom: 2rem;
   }
 
   p {
-    font-size: 1.25rem;
+    max-width: 442px;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  hr {
-    margin: 4rem 0;
-  }
-
-  @media screen and (max-width: 800px) {
-    h2 {
-      font-size: 2rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
+  span {
+    font-weight: 700;
   }
 `;
 
 const Hero = () => {
   return (
     <HeroWrapper>
-      <h2>Find your dream job!</h2>
-      <p>Tech jobs for every skill level.</p>
-      <hr />
+      <img src={heroImage} alt="A meeting at a workspace" />
+      <h1>Find your dream job!</h1>
+      <p>
+        <span>Site Name</span> is a bountiful source for discovering your next
+        career. We specialize in helping new job seekers land their first
+        opportunity.
+      </p>
     </HeroWrapper>
   );
 };

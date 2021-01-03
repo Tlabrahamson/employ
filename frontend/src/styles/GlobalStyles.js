@@ -12,6 +12,17 @@ body {
     font-family: 'Roboto', sans-serif;
     position: relative;
     min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 500;
 }
 
 main {
@@ -25,16 +36,14 @@ main {
 
 button {
     cursor: pointer;
-    transition: all 0.4s ease;
-    
+    transition: all 0.3s ease;
     &:hover {
         opacity: 0.7;
       }
 }
 
 a {
-    transition: all 0.4s ease;
-    
+    transition: all 0.3s ease;
     &:hover {
         opacity: 0.7;
       }
@@ -42,6 +51,8 @@ a {
 
 p {
     white-space: pre-line;
+    font-size: 1rem;
+    line-height: 30px;
 }
 
 hr {
@@ -60,6 +71,16 @@ hr {
         width: 100%;
         padding: 0 2rem;
         min-height: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
     }
 }
 `;

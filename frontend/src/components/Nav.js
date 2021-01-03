@@ -2,25 +2,18 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import UserContext from "../context/UserContext";
-import Logo from "../assets/logo.png";
 
 const HeaderWrap = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 8rem;
-  background: #2d2d2d;
-  color: #fff;
-  margin-bottom: 4rem;
+  padding: 1rem 8rem 0 8rem;
+  background: transparent;
+  margin-bottom: 1rem;
 
   .logo-link {
     display: flex;
     align-items: center;
-
-    img {
-      width: 40px;
-      padding-right: 0.5rem;
-    }
   }
 
   div {
@@ -51,21 +44,12 @@ const HeaderWrap = styled.header`
 
   nav a {
     width: 100%;
-    font-size: 18px;
     display: flex;
     justify-content: center;
   }
 
   @media screen and (max-width: 800px) {
-    padding: 2rem;
-
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    nav a {
-      font-size: 16px;
-    }
+    padding: 1rem;
   }
 `;
 
@@ -80,13 +64,12 @@ export default function Nav() {
     window.location = "/";
   };
 
-  if (userData.user) {
-    return (
-      <HeaderWrap>
-        <Link className="logo-link" to="/">
-          <img src={Logo} alt="logo" />
-          <h1>Jr Dev Sim</h1>
-        </Link>
+  return (
+    <HeaderWrap>
+      <Link className="logo-link" to="/">
+        <h2>Site Name</h2>
+      </Link>
+      {userData.user ? (
         <div>
           <p>Hello, {userData.user.name}</p>
           <nav>
@@ -100,25 +83,18 @@ export default function Nav() {
             </ul>
           </nav>
         </div>
-      </HeaderWrap>
-    );
-  }
-  return (
-    <HeaderWrap>
-      <Link className="logo-link" to="/">
-        <img src={Logo} alt="logo" />
-        <h1>Jr Dev Sim</h1>
-      </Link>
-      <nav>
-        <ul>
-          <Link to="/login">
-            <li>Login</li>
-          </Link>
-          <Link to="/register">
-            <li>Register</li>
-          </Link>
-        </ul>
-      </nav>
+      ) : (
+        <nav>
+          <ul>
+            <Link to="/login">
+              <li>Login</li>
+            </Link>
+            <Link to="/register">
+              <li>Register</li>
+            </Link>
+          </ul>
+        </nav>
+      )}
     </HeaderWrap>
   );
 }
