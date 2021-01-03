@@ -9,7 +9,6 @@ const HeaderWrap = styled.header`
   align-items: center;
   padding: 1rem 8rem 0 8rem;
   background: transparent;
-  margin-bottom: 1rem;
   z-index: 1;
 
   .logo-link {
@@ -55,14 +54,14 @@ const HeaderWrap = styled.header`
     justify-content: center;
 
     &:last-child {
-      background: #e3554d;
+      background: #ee4853;
       border-radius: 10px;
       color: #fff;
       padding: 10px;
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
     padding: 1rem;
   }
 `;

@@ -43,7 +43,7 @@ main {
 button {
     cursor: pointer;
     transition: all 0.3s ease;
-    background: #E3554D;
+    background: #EE4853;
     &:hover {
         opacity: 0.7;
       }
