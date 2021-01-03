@@ -36,7 +36,6 @@ const SingleJobWrapper = styled.div`
   }
 
   .apply-button {
-    background: #2d2d2d;
     width: 200px;
   }
 

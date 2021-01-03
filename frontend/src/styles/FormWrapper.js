@@ -40,7 +40,6 @@ const FormWrapper = styled.div`
     border-radius: 10px;
     padding: 0.3rem 0;
     font-size: 1rem;
-    background: #2d2d2d;
     color: #fff;
     border: none;
   }
