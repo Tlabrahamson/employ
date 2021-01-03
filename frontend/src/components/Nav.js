@@ -24,6 +24,11 @@ const HeaderWrap = styled.header`
 
   div p {
     padding-bottom: 0.5rem;
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+    }
   }
 
   nav {
@@ -36,6 +41,7 @@ const HeaderWrap = styled.header`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
     list-style: none;
+    align-items: center;
   }
 
   a {
@@ -47,6 +53,13 @@ const HeaderWrap = styled.header`
     width: 100%;
     display: flex;
     justify-content: center;
+
+    &:last-child {
+      background: #e3554d;
+      border-radius: 10px;
+      color: #fff;
+      padding: 10px;
+    }
   }
 
   @media screen and (max-width: 800px) {
@@ -72,7 +85,9 @@ export default function Nav() {
       </Link>
       {userData.user ? (
         <div>
-          <p>Hello, {userData.user.name}</p>
+          <p>
+            <span>Hello, {userData.user.name}</span>
+          </p>
           <nav>
             <ul>
               <Link to="/create">
