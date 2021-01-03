@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import heroImage from "../assets/hero.png";
+import heroImage from "../assets/hero.jpg";
 
 const HeroWrapper = styled.div`
   height: 290px;
@@ -19,10 +19,12 @@ const HeroWrapper = styled.div`
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
+    opacity: 0.4;
   }
 
   h1 {
     padding-bottom: 2rem;
+    position: relative;
   }
 
   p {
