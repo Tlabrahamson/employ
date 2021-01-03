@@ -32,6 +32,7 @@ main {
     padding-bottom: 8rem;
     display: block;
     min-height: 80vh;
+    overflow: hidden;
 }
 
 button {
