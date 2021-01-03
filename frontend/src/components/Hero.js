@@ -11,7 +11,6 @@ const HeroWrapper = styled.div`
   align-items: center;
   justify-content: start;
   text-align: center;
-  overflow: hidden;
 
   img {
     position: absolute;
@@ -19,12 +18,13 @@ const HeroWrapper = styled.div`
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.2;
   }
 
   h1 {
     padding-bottom: 2rem;
     position: relative;
+    white-space: nowrap;
   }
 
   p {

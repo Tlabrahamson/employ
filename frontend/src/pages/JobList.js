@@ -12,6 +12,21 @@ const JobListWrapper = styled.div`
   display: grid;
   grid-row-gap: 2rem;
 
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 2px 4px 16px #dfdfdf;
+    }
+
+    &:active {
+      transform: scale(1);
+      box-shadow: 2px 4px 4px #dfdfdf;
+    }
+  }
+
   h4 {
     font-weight: 400;
   }
@@ -20,11 +35,6 @@ const JobListWrapper = styled.div`
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 2px 4px 8px #dfdfdf;
-  }
-
-  article a {
-    color: inherit;
-    text-decoration: none;
   }
 
   span {
@@ -58,16 +68,16 @@ const JobList = () => {
       let jobDate = `${month}/${day}/${year}`;
 
       return (
-        <article key={job._id}>
-          <Link to={`/jobs/${job._id}`}>
+        <Link to={`/jobs/${job._id}`}>
+          <article key={job._id}>
             <h2>{job.jobTitle}</h2>
-          </Link>
-          <p>
-            <span>{job.company}</span>
-          </p>
-          <p>{job.location}</p>
-          <p>Posted: {jobDate}</p>
-        </article>
+            <p>
+              <span>{job.company}</span>
+            </p>
+            <p>{job.location}</p>
+            <p>Posted: {jobDate}</p>
+          </article>
+        </Link>
       );
     });
 

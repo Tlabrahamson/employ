@@ -28,15 +28,16 @@ const SingleJobWrapper = styled.div`
   }
 
   .edit-button {
-    background: #40ca8c;
+    background: #10a134;
   }
 
   .delete-button {
-    background: #e75149;
+    background: #ee4853;
   }
 
   .apply-button {
     width: 200px;
+    padding: 10px;
   }
 
   form {
@@ -50,7 +51,8 @@ const SingleJobWrapper = styled.div`
     width: 50%;
 
     input {
-      width: 200px;
+      width: 250px;
+      font-size: 1rem;
       padding: 0.3rem 0;
     }
 
@@ -63,7 +65,7 @@ const SingleJobWrapper = styled.div`
 
   @media screen and (max-width: 800px) {
     form {
-      margin-top: 2rem;
+      padding: 0 1rem;
       width: 100%;
     }
   }

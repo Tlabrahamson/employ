@@ -38,7 +38,7 @@ const FormWrapper = styled.div`
     width: 100px;
     cursor: pointer;
     border-radius: 10px;
-    padding: 0.3rem 0;
+    padding: 10px;
     font-size: 1rem;
     color: #fff;
     border: none;
