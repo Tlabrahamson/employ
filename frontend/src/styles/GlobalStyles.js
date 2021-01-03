@@ -67,6 +67,10 @@ hr {
     color: #2d2d2d !important;
 }
 
+.hero-overflow-container {
+    overflow: hidden;
+}
+
 @media screen and (max-width: 1200px) {
     main {
         width: 100%;

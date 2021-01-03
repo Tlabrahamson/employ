@@ -10,6 +10,7 @@ const HeroWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   overflow: hidden;
 
   img {
@@ -27,7 +28,6 @@ const HeroWrapper = styled.div`
   p {
     max-width: 442px;
     margin: 0 auto;
-    text-align: center;
   }
 
   span {
