@@ -38,7 +38,6 @@ const HeaderWrap = styled.header`
   nav ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2rem;
     list-style: none;
     align-items: center;
   }

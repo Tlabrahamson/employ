@@ -27,12 +27,16 @@ const HeroWrapper = styled.div`
     white-space: nowrap;
   }
 
+  h1 span {
+    color: #a53df5;
+  }
+
   p {
     max-width: 442px;
     margin: 0 auto;
   }
 
-  span {
+  p span {
     font-weight: 700;
   }
 `;
@@ -41,7 +45,9 @@ const Hero = () => {
   return (
     <HeroWrapper>
       <img src={heroImage} alt="A meeting at a workspace" />
-      <h1>Find your dream job!</h1>
+      <h1>
+        Find your <span>dream</span> job!
+      </h1>
       <p>
         <span>Site Name</span> is a bountiful source for discovering your next
         career. We specialize in helping new job seekers land their first
