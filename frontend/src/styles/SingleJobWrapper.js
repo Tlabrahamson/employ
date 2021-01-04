@@ -51,7 +51,7 @@ const SingleJobWrapper = styled.div`
     width: 50%;
 
     input {
-      width: 250px;
+      width: 200px;
       font-size: 1rem;
       padding: 0.3rem 0;
     }
@@ -66,6 +66,10 @@ const SingleJobWrapper = styled.div`
   @media screen and (max-width: 800px) {
     form {
       padding: 0 1rem;
+      width: 100%;
+    }
+
+    input {
       width: 100%;
     }
   }
