@@ -1,4 +1,16 @@
-// Adding a comment just to have a dif :P
+/*
+  TODOS:
+
+  - Come up with a better website title
+  - Create a logo and a favicon
+  - Experiment more with color accents
+  - Create/implement a better job posted/updated/deleted modal
+  - Make the mini form on viewSingleJob screen say "Thank you" when submitted
+  - Add pagination or infinite scroll when job list hits a certain number
+  - Only allow the user that listed the job to edit and delete jobs
+  - MAYBE add a "categories" to the job model so I can implement a sorting feature depending on the job type
+
+*/
 
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
