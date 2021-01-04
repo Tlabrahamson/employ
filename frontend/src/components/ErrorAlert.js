@@ -1,5 +1,7 @@
 import React from "react";
 
+// Need to make the error handling a bit more appealing
+
 const ErrorAlert = props => {
   return (
     <div className="error-alert">

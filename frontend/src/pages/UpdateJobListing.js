@@ -3,6 +3,8 @@ import axios from "axios";
 import FormWrapper from "../styles/FormWrapper";
 import { useParams } from "react-router";
 
+// Single item updates aren't working correctly. Need to fix that.
+
 const UpdateJobListing = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
   const { jobId } = useParams();

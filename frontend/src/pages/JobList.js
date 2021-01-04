@@ -42,6 +42,8 @@ const JobListWrapper = styled.div`
   }
 `;
 
+// Need to add pagination or infinite scroll when job list exceeds 10 jobs
+
 const JobList = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
   const [jobs, setJobs] = useState([]);
