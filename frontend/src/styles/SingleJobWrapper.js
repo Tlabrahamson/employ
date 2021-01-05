@@ -28,11 +28,11 @@ const SingleJobWrapper = styled.div`
   }
 
   .edit-button {
-    background: #10a134;
+    background: #4caf50;
   }
 
   .delete-button {
-    background: #ee4853;
+    background: #f44336;
   }
 
   .apply-button {

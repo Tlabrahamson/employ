@@ -53,7 +53,7 @@ const HeaderWrap = styled.header`
     justify-content: start;
 
     &:last-child {
-      background: #ee4853;
+      background: #f44336;
       border-radius: 10px;
       color: #fff;
       padding: 10px;
