@@ -1,7 +1,6 @@
 /*
   TODOS:
-
-  - Come up with a better website title
+  
   - Create a logo and a favicon
   - Experiment more with color accents
   - Create/implement a better job posted/updated/deleted modal
