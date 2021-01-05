@@ -66,6 +66,11 @@ hr {
     color: #2d2d2d;
 }
 
+select {
+    font-size: 1rem;
+    padding: 0.3rem 0;
+}
+
 .progress {
     position: absolute;
     top: 50%;
