@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import UserContext from "../context/UserContext";
+import Logo from "../assets/logo.png";
+// import MobileLogo from "../assets/mobile-logo.png";
 
 const HeaderWrap = styled.header`
   display: flex;
@@ -79,7 +81,7 @@ export default function Nav() {
   return (
     <HeaderWrap>
       <Link className="logo-link" to="/">
-        <h2>EMPLOY.</h2>
+        <img src={Logo} alt="Employ Logo" />
       </Link>
       {userData.user ? (
         <div>
