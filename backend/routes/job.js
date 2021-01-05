@@ -15,6 +15,7 @@ router.post("/create", async (req, res) => {
     const job = new Job({
       jobTitle: req.body.jobTitle,
       company: req.body.company,
+      category: req.body.category,
       description: req.body.description,
       location: req.body.location,
       salary: req.body.salary,
@@ -51,6 +52,7 @@ router.post("/update/:id", async (req, res) => {
     }).then(job => {
       (job.jobTitle = req.body.jobTitle),
         (job.company = req.body.company),
+        (job.category = req.body.category),
         (job.description = req.body.description),
         (job.location = req.body.location),
         (job.salary = req.body.salary),

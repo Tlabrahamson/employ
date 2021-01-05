@@ -6,7 +6,6 @@
   - Create/implement a better job posted/updated/deleted modal
   - Make the mini form on viewSingleJob screen say "Thank you" when submitted
   - Add pagination or infinite scroll when job list hits a certain number
-  - MAYBE add a "categories" to the job model so I can implement a sorting feature depending on the job type
   - Maybe add company logo upload/display
 
 */

@@ -46,6 +46,7 @@ const JobList = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
   // const url = "http://localhost:5000";
   const [jobs, setJobs] = useState([]);
+  const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ const JobList = () => {
         console.log(err);
       });
   }, []);
+
   const listJobs = jobs
     .slice(0)
     .reverse()
@@ -69,21 +71,27 @@ const JobList = () => {
       let differenceInDays = Math.floor(difference / (1000 * 3600 * 24));
 
       return (
-        <Link to={`/jobs/${job._id}`}>
-          <article key={job._id}>
+        <Link key={job.category} to={`/jobs/${job._id}`}>
+          <article>
             <h2>{job.jobTitle}</h2>
             <p>
               <span>{job.company}</span>
             </p>
             <p>{job.location}</p>
             <p>
-              Posted {differenceInDays}{" "}
-              {differenceInDays === 1 ? "day ago" : "days ago"}
+              Posted {differenceInDays === 0 ? "today" : differenceInDays}{" "}
+              {differenceInDays === 1
+                ? "day ago"
+                : differenceInDays > 1
+                ? "days ago"
+                : ""}
             </p>
           </article>
         </Link>
       );
     });
+
+  const filterJobs = listJobs.filter(job => job.key === category);
 
   return (
     <>
@@ -91,7 +99,18 @@ const JobList = () => {
       {loading === true ? (
         <CircularProgress className="progress" />
       ) : (
-        <JobListWrapper>{listJobs}</JobListWrapper>
+        <JobListWrapper>
+          <label htmlFor="category">Filter by category</label>
+          <select name="category" onChange={e => setCategory(e.target.value)}>
+            <option value="">All</option>
+            <option value="programming">Programming</option>
+            <option value="design">Design</option>
+            <option value="sales-and-marketing">Sales and Marketing</option>
+            <option value="customer-support">Customer Support</option>
+            <option value="other">Other</option>
+          </select>
+          {category === "" ? listJobs : filterJobs}
+        </JobListWrapper>
       )}
     </>
   );
