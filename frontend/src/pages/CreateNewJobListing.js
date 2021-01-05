@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import UserContext from "../context/UserContext";
 import FormWrapper from "../styles/FormWrapper";
 import axios from "axios";
 import ErrorAlert from "../components/ErrorAlert";
 
 const CreateNewJobListing = () => {
+  const { userData } = useContext(UserContext);
   const url = "https://jr-dev-sim-backend.herokuapp.com";
+  // const url = "http://localhost:5000";
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [description, setDescription] = useState("");
@@ -24,7 +27,8 @@ const CreateNewJobListing = () => {
         location,
         salary,
         contactName,
-        contactEmail
+        contactEmail,
+        postedBy: userData.user._id
       };
 
       if (

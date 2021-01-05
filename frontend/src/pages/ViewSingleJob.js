@@ -9,6 +9,7 @@ import emailjs from "emailjs-com";
 
 const ViewSingleJob = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
+  // const url = "http://localhost:5000";
   const { userData } = useContext(UserContext);
   const { jobId } = useParams();
   const [job, setJob] = useState([]);
@@ -83,7 +84,7 @@ const ViewSingleJob = () => {
       <p>
         Contact Information: {job.contactName} - {job.contactEmail}
       </p>
-      {userData.user ? (
+      {userData.user && userData.user._id === job.postedBy ? (
         <div>
           <Link to={`/update/${job._id}`}>
             <button className="edit-button">Edit</button>

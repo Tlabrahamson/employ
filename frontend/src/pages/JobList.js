@@ -44,6 +44,7 @@ const JobListWrapper = styled.div`
 
 const JobList = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
+  // const url = "http://localhost:5000";
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -77,7 +78,7 @@ const JobList = () => {
             <p>{job.location}</p>
             <p>
               Posted {differenceInDays}{" "}
-              {differenceInDays <= 1 ? "day ago" : "days ago"}
+              {differenceInDays === 1 ? "day ago" : "days ago"}
             </p>
           </article>
         </Link>

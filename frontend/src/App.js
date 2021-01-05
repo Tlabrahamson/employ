@@ -7,8 +7,8 @@
   - Create/implement a better job posted/updated/deleted modal
   - Make the mini form on viewSingleJob screen say "Thank you" when submitted
   - Add pagination or infinite scroll when job list hits a certain number
-  - Only allow the user that listed the job to edit and delete jobs
   - MAYBE add a "categories" to the job model so I can implement a sorting feature depending on the job type
+  - Maybe add company logo upload/display
 
 */
 
@@ -36,6 +36,7 @@ import UpdateJobListing from "./pages/UpdateJobListing";
 
 function App() {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
+  // const url = "http://localhost:5000";
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
@@ -49,7 +50,7 @@ function App() {
       });
       setUserData({
         token,
-        user: { name: getUser.data.name }
+        user: { name: getUser.data.name, _id: getUser.data._id }
       });
     };
     checkLoggedIn();

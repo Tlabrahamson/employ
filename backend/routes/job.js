@@ -19,7 +19,8 @@ router.post("/create", async (req, res) => {
       location: req.body.location,
       salary: req.body.salary,
       contactName: req.body.contactName,
-      contactEmail: req.body.contactEmail
+      contactEmail: req.body.contactEmail,
+      postedBy: req.body.postedBy
     });
     const savedJob = await job.save();
     res.send({ savedJob });
