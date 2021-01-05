@@ -6,16 +6,19 @@ import axios from "axios";
 import SingleJobWrapper from "../styles/SingleJobWrapper";
 import { CircularProgress } from "@material-ui/core";
 import emailjs from "emailjs-com";
+import ErrorAlert from "../components/ErrorAlert";
 
 const ViewSingleJob = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
-  // const url = "http://localhost:5000";
   const { userData } = useContext(UserContext);
   const { jobId } = useParams();
   const [job, setJob] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(true);
+  const [success, setSuccess] = useState("");
+  const [open, setOpen] = useState(false);
+  console.log(open);
 
   useEffect(() => {
     axios
@@ -28,14 +31,15 @@ const ViewSingleJob = () => {
   }, [jobId]);
 
   const handleDelete = e => {
-    console.log(job);
     e.preventDefault();
     axios
       .delete(`${url}/api/job/jobs/${jobId}`)
       .then(res => console.log("Job Deleted"));
-    console.log(jobId);
-    alert("Job Deleted!");
-    window.location = "/";
+
+    setSuccess("Job Deleted");
+    setTimeout(() => {
+      window.location = "/";
+    }, 3000);
   };
 
   const handleSubmit = e => {
@@ -73,50 +77,59 @@ const ViewSingleJob = () => {
   return loading === true ? (
     <CircularProgress className="progress" />
   ) : (
-    <SingleJobWrapper>
-      <h2>
-        {job.jobTitle} - {job.company}
-      </h2>
-      <p>{job.location}</p>
-      <p>{job.salary}</p>
-      <hr />
-      <p>{job.description}</p>
-      <p>
-        Contact Information: {job.contactName} - {job.contactEmail}
-      </p>
-      {userData.user && userData.user._id === job.postedBy ? (
-        <div>
-          <Link to={`/update/${job._id}`}>
-            <button className="edit-button">Edit</button>
-          </Link>
-          <button className="delete-button" onClick={handleDelete}>
-            Delete
-          </button>
-        </div>
-      ) : (
-        <form>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            onChange={e => setName(e.target.value)}
-            value={name}
-          />
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={e => setEmail(e.target.value)}
-            value={email}
-          />
-          <button className="apply-button" onClick={handleSubmit}>
-            Apply for this position
-          </button>
-        </form>
+    <>
+      {success && (
+        <ErrorAlert
+          open={() => setOpen(true)}
+          message={success}
+          type="success"
+        />
       )}
-    </SingleJobWrapper>
+      <SingleJobWrapper>
+        <h2>
+          {job.jobTitle} - {job.company}
+        </h2>
+        <p>{job.location}</p>
+        <p>{job.salary}</p>
+        <hr />
+        <p>{job.description}</p>
+        <p>
+          Contact Information: {job.contactName} - {job.contactEmail}
+        </p>
+        {userData.user && userData.user._id === job.postedBy ? (
+          <div>
+            <Link to={`/update/${job._id}`}>
+              <button className="edit-button">Edit</button>
+            </Link>
+            <button className="delete-button" onClick={handleDelete}>
+              Delete
+            </button>
+          </div>
+        ) : (
+          <form>
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              onChange={e => setName(e.target.value)}
+              value={name}
+            />
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={e => setEmail(e.target.value)}
+              value={email}
+            />
+            <button className="apply-button" onClick={handleSubmit}>
+              Apply for this position
+            </button>
+          </form>
+        )}
+      </SingleJobWrapper>
+    </>
   );
 };
 

@@ -7,7 +7,6 @@ import ErrorAlert from "../components/ErrorAlert";
 const CreateNewJobListing = () => {
   const { userData } = useContext(UserContext);
   const url = "https://jr-dev-sim-backend.herokuapp.com";
-  // const url = "http://localhost:5000";
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [category, setCategory] = useState("");
@@ -17,6 +16,9 @@ const CreateNewJobListing = () => {
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [open, setOpen] = useState(false);
+  console.log(open);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -50,8 +52,10 @@ const CreateNewJobListing = () => {
         .post(`${url}/api/job/create`, newJob)
         .then(res => console.log(res.data));
 
-      alert("Job Created!");
-      window.location = "/";
+      setSuccess("Job Created!");
+      setTimeout(() => {
+        window.location = "/";
+      }, 3000);
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
     }
@@ -61,7 +65,14 @@ const CreateNewJobListing = () => {
     <FormWrapper>
       <h2>Create A New Job Listing</h2>
       {error && (
-        <ErrorAlert message={error} clearError={() => setError(undefined)} />
+        <ErrorAlert open={() => setOpen(true)} message={error} type="error" />
+      )}
+      {success && (
+        <ErrorAlert
+          open={() => setOpen(true)}
+          message={success}
+          type="success"
+        />
       )}
       <form method="POST">
         <label htmlFor="job-title">Job Title</label>

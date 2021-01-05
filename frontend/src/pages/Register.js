@@ -11,6 +11,8 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [open, setOpen] = useState(false);
+  console.log(open);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -28,7 +30,7 @@ const Register = () => {
 
         window.location = "/";
       } else {
-        alert("Uh oh. Your passwords don't match.");
+        setError("Uh oh. Your passwords don't match.");
       }
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);
@@ -39,7 +41,7 @@ const Register = () => {
     <FormWrapper>
       <h2>Register</h2>
       {error && (
-        <ErrorAlert message={error} clearError={() => setError(undefined)} />
+        <ErrorAlert open={() => setOpen(true)} message={error} type="error" />
       )}
       <form>
         <label htmlFor="name">Display Name</label>
