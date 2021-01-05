@@ -3,7 +3,6 @@
   
   - Create a logo and a favicon
   - Experiment more with color accents
-  - Create/implement a better job posted/updated/deleted modal
   - Make the mini form on viewSingleJob screen say "Thank you" when submitted
   - Add pagination or infinite scroll when job list hits a certain number
   - Maybe add company logo upload/display

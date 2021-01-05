@@ -1,12 +1,27 @@
 import React from "react";
+import { Snackbar } from "@material-ui/core";
+import MuiAlert from "@material-ui/lab/Alert";
 
-// Need to make the error handling a bit more appealing
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const ErrorAlert = props => {
   return (
-    <div className="error-alert">
-      <span>{props.message}</span>
-      <button onClick={props.clearError}>X</button>
+    <div>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center"
+        }}
+        open={props.open}
+        autoHideDuration={6000}
+        onClose={props.clearError}
+      >
+        <Alert onClose={props.clearError} severity={props.type}>
+          {props.message}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

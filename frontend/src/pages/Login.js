@@ -7,11 +7,12 @@ import ErrorAlert from "../components/ErrorAlert";
 
 const Login = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const { setUserData } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const { setUserData } = useContext(UserContext);
+  const [open, setOpen] = useState(false);
+  console.log(open);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -41,7 +42,7 @@ const Login = () => {
     <FormWrapper>
       <h2>Login</h2>
       {error && (
-        <ErrorAlert message={error} clearError={() => setError(undefined)} />
+        <ErrorAlert open={() => setOpen(true)} message={error} type="error" />
       )}
       <form>
         <label htmlFor="email">Email</label>

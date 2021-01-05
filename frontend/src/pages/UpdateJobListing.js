@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import FormWrapper from "../styles/FormWrapper";
 import { useParams } from "react-router";
+import ErrorAlert from "../components/ErrorAlert";
 
 const UpdateJobListing = () => {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
@@ -14,6 +15,10 @@ const UpdateJobListing = () => {
   const [salary, setSalary] = useState("");
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [open, setOpen] = useState(false);
+  console.log(open);
 
   useEffect(() => {
     axios
@@ -62,17 +67,29 @@ const UpdateJobListing = () => {
         setJob(updatedJob);
       });
 
-      alert("Job Updated!");
-      window.location = "/";
+      setSuccess("Job Updated");
+      setTimeout(() => {
+        window.location = "/";
+      }, [3000]);
     } catch (err) {
       console.log(err);
-      alert(err);
+      setError(err);
     }
   };
 
   return (
     <FormWrapper>
       <h2>Update A Job Listing</h2>
+      {error && (
+        <ErrorAlert open={() => setOpen(true)} message={error} type="error" />
+      )}
+      {success && (
+        <ErrorAlert
+          open={() => setOpen(true)}
+          message={success}
+          type="success"
+        />
+      )}
       <form method="POST">
         <label htmlFor="job-title">Job Title</label>
         <input
