@@ -28,7 +28,7 @@ const HeroWrapper = styled.div`
   }
 
   h1 span {
-    color: #a53df5;
+    color: #5aa8e0;
   }
 
   p {
@@ -49,8 +49,8 @@ const Hero = () => {
         Find your <span>dream</span> job!
       </h1>
       <p>
-        <span>Site Name</span> is a bountiful source for discovering your next
-        career. We specialize in helping new job seekers land their first
+        <span>EMPLOY.</span> is a bountiful source for discovering your next
+        occupation. We specialize in helping new job seekers land their first
         opportunity.
       </p>
     </HeroWrapper>
