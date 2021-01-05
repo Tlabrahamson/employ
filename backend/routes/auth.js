@@ -53,7 +53,7 @@ router.post("/login", async (req, res) => {
     res.json({
       token,
       user: {
-        id: user._id,
+        _id: user._id,
         name: user.name
       }
     });
@@ -66,6 +66,7 @@ router.post("/login", async (req, res) => {
 router.get("/", verifyToken, async (req, res) => {
   const user = await User.findById(req.user);
   res.json({
+    _id: user._id,
     name: user.name
   });
 });
