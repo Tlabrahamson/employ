@@ -91,7 +91,7 @@ export default function Nav() {
               <Link to="/create">
                 <li>List a Job</li>
               </Link>
-              <Link onClick={handleLogout}>
+              <Link to="" onClick={handleLogout}>
                 <li>Log Out</li>
               </Link>
             </ul>

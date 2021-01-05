@@ -13,6 +13,10 @@ const jobSchema = new mongoose.Schema({
     max: 255,
     min: 6
   },
+  category: {
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true,

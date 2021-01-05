@@ -10,6 +10,7 @@ const CreateNewJobListing = () => {
   // const url = "http://localhost:5000";
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
+  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [salary, setSalary] = useState("");
@@ -23,6 +24,7 @@ const CreateNewJobListing = () => {
       const newJob = {
         jobTitle,
         company,
+        category,
         description,
         location,
         salary,
@@ -34,6 +36,7 @@ const CreateNewJobListing = () => {
       if (
         jobTitle === "" ||
         company === "" ||
+        category === "" ||
         description === "" ||
         location === "" ||
         salary === "" ||
@@ -78,6 +81,18 @@ const CreateNewJobListing = () => {
           value={company}
           placeholder="Company"
         />
+
+        <label htmlFor="category">Category</label>
+        <select name="category" onChange={e => setCategory(e.target.value)}>
+          <option value="" disabled selected>
+            Select a Job Category
+          </option>
+          <option value="programming">Programming</option>
+          <option value="design">Design</option>
+          <option value="sales-and-marketing">Sales and Marketing</option>
+          <option value="customer-support">Customer Support</option>
+          <option value="other">Other</option>
+        </select>
 
         <label htmlFor="description">Description</label>
         <textarea
