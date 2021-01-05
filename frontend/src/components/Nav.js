@@ -79,7 +79,7 @@ export default function Nav() {
   return (
     <HeaderWrap>
       <Link className="logo-link" to="/">
-        <h2>Site Name</h2>
+        <h2>EMPLOY.</h2>
       </Link>
       {userData.user ? (
         <div>
