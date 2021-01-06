@@ -135,7 +135,7 @@ const JobList = () => {
             <option value="customer-support">Customer Support</option>
             <option value="other">Other</option>
           </select>
-          <div>{category === "" ? listJobs : filterJobs}</div>
+          {category === "" ? listJobs : filterJobs}
         </JobListWrapper>
       )}
     </>
