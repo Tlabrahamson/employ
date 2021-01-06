@@ -70,7 +70,7 @@ const JobList = () => {
       let differenceInDays = Math.floor(difference / (1000 * 3600 * 24));
 
       return (
-        <Link key={job.category} to={`/jobs/${job._id}`}>
+        <Link key={job._id} to={`/jobs/${job._id}`}>
           <article>
             <h2>{job.jobTitle}</h2>
             <p>
@@ -90,7 +90,34 @@ const JobList = () => {
       );
     });
 
-  const filterJobs = listJobs.filter(job => job.key === category);
+  const filterJobs = jobs
+    .filter(job => job.category === category)
+    .map(job => {
+      let postedDate = new Date(job.date);
+      let currentDate = new Date();
+      let difference = currentDate.getTime() - postedDate.getTime();
+      let differenceInDays = Math.floor(difference / (1000 * 3600 * 24));
+
+      return (
+        <Link key={job._id} to={`/jobs/${job._id}`}>
+          <article>
+            <h2>{job.jobTitle}</h2>
+            <p>
+              <span>{job.company}</span>
+            </p>
+            <p>{job.location}</p>
+            <p>
+              Posted {differenceInDays === 0 ? "today" : differenceInDays}{" "}
+              {differenceInDays === 1
+                ? "day ago"
+                : differenceInDays > 1
+                ? "days ago"
+                : ""}
+            </p>
+          </article>
+        </Link>
+      );
+    });
 
   return (
     <>
@@ -108,7 +135,7 @@ const JobList = () => {
             <option value="customer-support">Customer Support</option>
             <option value="other">Other</option>
           </select>
-          {category === "" ? listJobs : filterJobs}
+          <div>{category === "" ? listJobs : filterJobs}</div>
         </JobListWrapper>
       )}
     </>

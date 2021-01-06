@@ -12,7 +12,6 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -30,6 +29,7 @@ const Register = () => {
 
         window.location = "/";
       } else {
+        console.log(open);
         setError("Uh oh. Your passwords don't match.");
       }
     } catch (err) {

@@ -1,12 +1,8 @@
 /*
   TODOS:
-  
-  - Create a logo and a favicon
   - Experiment more with color accents
-  - Make the mini form on viewSingleJob screen say "Thank you" when submitted
   - Add pagination or infinite scroll when job list hits a certain number
   - Maybe add company logo upload/display
-
 */
 
 import React, { useEffect, useState } from "react";
@@ -33,7 +29,6 @@ import UpdateJobListing from "./pages/UpdateJobListing";
 
 function App() {
   const url = "https://jr-dev-sim-backend.herokuapp.com";
-  // const url = "http://localhost:5000";
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
