@@ -16,9 +16,8 @@ const ViewSingleJob = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(true);
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(false);
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   useEffect(() => {
     axios
@@ -37,6 +36,7 @@ const ViewSingleJob = () => {
       .then(res => console.log("Job Deleted"));
 
     setSuccess("Job Deleted");
+    console.log(open);
     setTimeout(() => {
       window.location = "/";
     }, 3000);
@@ -64,6 +64,7 @@ const ViewSingleJob = () => {
       .then(
         response => {
           console.log("SUCCESS!", response.status, response.text);
+          setSuccess("Application Submitted!");
         },
         error => {
           console.log("FAILED...", error);

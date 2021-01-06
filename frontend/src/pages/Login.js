@@ -12,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -25,6 +24,7 @@ const Login = () => {
         `${url}/api/user/login`,
         loginUser
       );
+      console.log(open);
 
       setUserData({
         token: loginResponse.data.token,

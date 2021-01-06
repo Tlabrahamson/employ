@@ -10,6 +10,7 @@ const UpdateJobListing = () => {
   const [job, setJob] = useState([]);
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
+  const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [salary, setSalary] = useState("");
@@ -18,7 +19,6 @@ const UpdateJobListing = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   useEffect(() => {
     axios
@@ -34,6 +34,7 @@ const UpdateJobListing = () => {
       const updatedJob = {
         jobTitle,
         company,
+        category,
         description,
         location,
         salary,
@@ -46,6 +47,9 @@ const UpdateJobListing = () => {
       }
       if (updatedJob.company === "") {
         updatedJob.company = job.company;
+      }
+      if (updatedJob.category === "") {
+        updatedJob.category = job.category;
       }
       if (updatedJob.description === "") {
         updatedJob.description = job.description;
@@ -67,6 +71,7 @@ const UpdateJobListing = () => {
         setJob(updatedJob);
       });
 
+      console.log(open);
       setSuccess("Job Updated");
       setTimeout(() => {
         window.location = "/";
@@ -108,6 +113,18 @@ const UpdateJobListing = () => {
           value={company}
           placeholder={job.company}
         />
+
+        <label htmlFor="category">Category</label>
+        <select name="category" onChange={e => setCategory(e.target.value)}>
+          <option value={job.category} disabled selected>
+            Select a Job Category
+          </option>
+          <option value="programming">Programming</option>
+          <option value="design">Design</option>
+          <option value="sales-and-marketing">Sales and Marketing</option>
+          <option value="customer-support">Customer Support</option>
+          <option value="other">Other</option>
+        </select>
 
         <label htmlFor="description">Description</label>
         <textarea
