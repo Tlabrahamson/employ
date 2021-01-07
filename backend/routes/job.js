@@ -57,12 +57,11 @@ router.post("/update/:id", async (req, res) => {
         (job.location = req.body.location),
         (job.salary = req.body.salary),
         (job.contactName = req.body.contactName),
-        (job.contactEmail = req.body.contactEmail);
-
-      job
-        .save()
-        .then(() => res.json("Job updated!"))
-        .catch(err => res.status(400).json("Error" + err));
+        (job.contactEmail = req.body.contactEmail),
+        job
+          .save()
+          .then(() => res.json("Job updated!"))
+          .catch(err => res.status(400).json("Error" + err));
     });
   } catch (err) {
     res.status(500).json({ error: err.message });

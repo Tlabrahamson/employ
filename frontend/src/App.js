@@ -1,10 +1,3 @@
-/*
-  TODOS:
-  - Experiment more with color accents
-  - Add pagination or infinite scroll when job list hits a certain number
-  - Maybe add company logo upload/display
-*/
-
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
