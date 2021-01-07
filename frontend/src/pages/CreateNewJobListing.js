@@ -18,10 +18,11 @@ const CreateNewJobListing = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   const handleSubmit = async e => {
     e.preventDefault();
+    console.log(open);
+
     try {
       const newJob = {
         jobTitle,
@@ -74,7 +75,7 @@ const CreateNewJobListing = () => {
           type="success"
         />
       )}
-      <form method="POST">
+      <form method="POST" encType="multipart/form-data">
         <label htmlFor="job-title">Job Title</label>
         <input
           type="text"
@@ -149,7 +150,6 @@ const CreateNewJobListing = () => {
           value={contactEmail}
           placeholder="Contact Email"
         />
-
         <button type="submit" onClick={handleSubmit}>
           Submit
         </button>

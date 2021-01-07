@@ -11,9 +11,11 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
+    "downloadjs": "^1.4.7",
     "emailjs-com": "^2.6.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropzone": "^11.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "styled-components": "^5.2.0"
