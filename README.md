@@ -2,7 +2,7 @@
 
 I've decided to redesign this project. It is a work in progress.
 
-Live site -> https://jr-dev-sim.netlify.app/
+Live site -> https://jobs-employ.netlify.app/
 
 Built with:
 
