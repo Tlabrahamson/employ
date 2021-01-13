@@ -94,8 +94,8 @@ const ViewSingleJob = () => {
         <p>{job.salary}</p>
         <hr />
         <p>{job.description}</p>
-        <p>
-          Contact Information: {job.contactName} - {job.contactEmail}
+        <p className="contact-info">
+          {job.contactName} | {job.contactEmail}
         </p>
         {userData.user && userData.user._id === job.postedBy ? (
           <div>

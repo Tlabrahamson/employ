@@ -40,6 +40,10 @@ const SingleJobWrapper = styled.div`
     padding: 10px;
   }
 
+  .contact-info {
+    font-weight: 500;
+  }
+
   form {
     display: flex;
     flex-direction: column;
