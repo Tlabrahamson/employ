@@ -13,5 +13,6 @@ Built with:
 - Styled Components
 - Material-UI
 - Axios
+- Nodemon for local server deployment
 
 Employ allows for CRUD operations. You can only see and apply for jobs if you aren't logged in. If you ARE logged in, you can create a job listing, update an existing job listing, and delete a job listing.
