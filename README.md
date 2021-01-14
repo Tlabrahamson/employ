@@ -1,18 +1,26 @@
 # Employ
 
-I've decided to redesign this project. It is a work in progress.
+![Employ](https://github.com/Tlabrahamson/employ/blob/main/frontend/src/assets/employ.jpg)
 
 Live site -> https://jobs-employ.netlify.app/
 
 Built with:
 
 - MongoDB Atlas 
-- Express and Node
+- Node
+- Express
 - Mongoose
-- React
+- React with hooks
 - Styled Components
 - Material-UI
 - Axios
 - Nodemon for local server deployment
+- JWT
+- Bcrypt
+- react-paginate
+- Postman
+- @hapi/joi for form validation
+- dotenv
+- cors
 
-Employ allows for CRUD operations. You can only see and apply for jobs if you aren't logged in. If you ARE logged in, you can create a job listing, update an existing job listing, and delete a job listing.
+Employ allows for CRUD operations. All users can browse jobs and apply. If logged in, users can list jobs as well as update and delete jobs they have listed.
