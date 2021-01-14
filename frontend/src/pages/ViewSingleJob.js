@@ -76,7 +76,9 @@ const ViewSingleJob = () => {
   };
 
   return loading === true ? (
-    <CircularProgress className="progress" />
+    <div className="progress">
+      <CircularProgress />
+    </div>
   ) : (
     <>
       {success && (
