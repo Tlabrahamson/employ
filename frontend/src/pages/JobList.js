@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
+import Pagination from "react-js-pagination";
 import { CircularProgress } from "@material-ui/core";
 
 // Components
@@ -47,6 +48,13 @@ const JobList = () => {
   const [jobs, setJobs] = useState([]);
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
+  const [activePage, setCurrentPage] = useState(1);
+  const jobsPerPage = 10;
+
+  // Logic For Current Jobs
+  const indexOfLastJob = activePage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
 
   useEffect(() => {
     axios
@@ -60,7 +68,11 @@ const JobList = () => {
       });
   }, []);
 
-  const listJobs = jobs
+  const handlePageChange = pageNumber => {
+    setCurrentPage(pageNumber);
+  };
+
+  const listJobs = currentJobs
     .slice(0)
     .reverse()
     .map(job => {
@@ -138,6 +150,14 @@ const JobList = () => {
           {category === "" ? listJobs : filterJobs}
         </JobListWrapper>
       )}
+      <Pagination
+        className="pagination"
+        activePage={activePage}
+        itemsCountPerPage={10}
+        totalItemsCount={jobs.length}
+        pageRangeDisplay={3}
+        onChange={handlePageChange}
+      />
     </>
   );
 };
