@@ -135,7 +135,9 @@ const JobList = () => {
     <>
       <Hero />
       {loading === true ? (
-        <CircularProgress className="progress" />
+        <div className="progress">
+          <CircularProgress />
+        </div>
       ) : (
         <JobListWrapper>
           <label htmlFor="category">Filter by category</label>

@@ -72,10 +72,13 @@ select {
 }
 
 .progress {
-    position: absolute;
-    top: 50%;
-    left: 47%;
-    color: #2d2d2d !important;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        svg {
+            color: #5aa8e0;
+        }
 }
 
 .pagination {
