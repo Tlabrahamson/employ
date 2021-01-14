@@ -78,6 +78,29 @@ select {
     color: #2d2d2d !important;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    list-style: none;
+    
+    a {
+        box-shadow: 2px 2px 2px #dfdfdf;
+        text-decoration: none;
+        color: inherit;
+        border: solid 1px #eee;
+        padding: .5rem 1rem;
+        border-radius: 8px;
+        margin: 0 .75rem;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 4px #dfdfdf;
+        }
+    }
+}
+
 @media screen and (max-width: 1200px) {
     main {
         width: 100%;
@@ -95,6 +118,14 @@ select {
     h2 {
         font-size: 24px;
         line-height: 36px
+    }
+
+    .pagination {
+        justify-content: space-between;
+        
+        a {
+            margin: 0;
+        }
     }
 }
 `;
