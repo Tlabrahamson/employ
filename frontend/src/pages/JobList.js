@@ -104,6 +104,8 @@ const JobList = () => {
 
   const filterJobs = jobs
     .filter(job => job.category === category)
+    .slice(0)
+    .reverse()
     .map(job => {
       let postedDate = new Date(job.date);
       let currentDate = new Date();
