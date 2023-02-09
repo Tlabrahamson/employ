@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const jobRoute = require("./routes/job");
 
-dotenv.config();
+dotenv.config(); 
 
 // Connect to DB
 mongoose.connect(
