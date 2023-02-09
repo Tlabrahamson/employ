@@ -21,7 +21,7 @@ import CreateNewJobListing from "./pages/CreateNewJobListing";
 import UpdateJobListing from "./pages/UpdateJobListing";
 
 function App() {
-  const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://employ-backend.onrender.com";
   const [userData, setUserData] = useState({});
 
   useEffect(() => {

@@ -9,7 +9,7 @@ import emailjs from "emailjs-com";
 import ErrorAlert from "../components/ErrorAlert";
 
 const ViewSingleJob = () => {
-  const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://employ-backend.onrender.com";
   const { userData } = useContext(UserContext);
   const { jobId } = useParams();
   const [job, setJob] = useState([]);

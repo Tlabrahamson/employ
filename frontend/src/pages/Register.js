@@ -5,7 +5,7 @@ import FormWrapper from "../styles/FormWrapper";
 import ErrorAlert from "../components/ErrorAlert";
 
 const Register = () => {
-  const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://employ-backend.onrender.com";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

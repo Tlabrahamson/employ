@@ -6,7 +6,7 @@ import ErrorAlert from "../components/ErrorAlert";
 
 const CreateNewJobListing = () => {
   const { userData } = useContext(UserContext);
-  const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://employ-backend.onrender.com";
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
   const [category, setCategory] = useState("");

@@ -6,7 +6,7 @@ import FormWrapper from "../styles/FormWrapper";
 import ErrorAlert from "../components/ErrorAlert";
 
 const Login = () => {
-  const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://employ-backend.onrender.com";
   const { setUserData } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

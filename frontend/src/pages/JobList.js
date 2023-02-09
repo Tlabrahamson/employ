@@ -44,7 +44,7 @@ const JobListWrapper = styled.div`
 `;
 
 const JobList = () => {
-  const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://employ-backend.onrender.com";
   const [jobs, setJobs] = useState([]);
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);

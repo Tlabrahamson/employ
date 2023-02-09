@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import ErrorAlert from "../components/ErrorAlert";
 
 const UpdateJobListing = () => {
-  const url = "https://jr-dev-sim-backend.herokuapp.com";
+  const url = "https://employ-backend.onrender.com";
   const { jobId } = useParams();
   const [job, setJob] = useState([]);
   const [jobTitle, setJobTitle] = useState("");
